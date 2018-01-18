@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Game - Let's play madlibs!</title>
+</head>
+<body>
+    <form action='/madlib'>
+        Select a person:
+        <br>
+        <select name="person">
+            {% for person in people %}
+                <option value="{{ person }}">{{ person }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        Select a color: <br>
+        {% for color in colors %}
+            <input type="radio" name="color" value=" {{ color }}">{{ color }}
+        {% endfor %}
+        <br><br>
+        Enter a noun:
+        <br>
+        <input type="text" name="noun">
+        <br><br>
+        Enter an adjective:
+        <br>
+        <input type="text" name="adjective">
+        <br><br>
+        Select your favorite animals:
+        <br>
+        {% for animal in animals %}
+            <input type="checkbox" name="animals" value="{{ animal }}"> {{ animal }}
+        {% endfor %}
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
